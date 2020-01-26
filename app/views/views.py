@@ -9,6 +9,6 @@ def renderReactPage():
 
 
 @views.route("chatbot", methods=["POST"])
-@cross_origin()
+# @cross_origin()
 def chatbot():
     return "Talk to chatbot"
