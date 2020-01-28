@@ -1,14 +1,17 @@
-from flask import Blueprint, jsonify, request, render_template
+from flask import Blueprint, jsonify, request, render_template, make_response
+from app.repository.repository import detect_intent
+from flask_cors import cross_origin
 
 views = Blueprint("views", __name__)
 
 
-@views.route("", methods=["GET"])
+@views.route("")
 def renderReactPage():
     return "React Page Here", 200
 
 
-@views.route("chatbot", methods=["POST"])
-# @cross_origin()
+@views.route("chatbot")
+@cross_origin()
 def chatbot():
-    return "Talk to chatbot"
+    response = detect_intent(request)
+    return jsonify(response), response["status"]

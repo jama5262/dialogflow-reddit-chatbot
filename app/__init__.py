@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from app.views.views import views
+from flask_cors import CORS
 
 
 def pageNotFound(error):
@@ -25,6 +26,8 @@ def serverError(error):
 
 def createApp():
     app = Flask(__name__)
+    cors = CORS(app)
+    app.config['CORS_HEADERS'] = 'Content-Type'
     app.register_blueprint(views, url_prefix="/")
     app.register_error_handler(404, pageNotFound)
     app.register_error_handler(405, methodNotAllowed)
