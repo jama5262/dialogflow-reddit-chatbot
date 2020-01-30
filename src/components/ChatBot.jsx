@@ -7,6 +7,8 @@ import { Grid, Dialog, DialogActions, DialogContent, DialogContentText, Button, 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
+import UserChatCard from "./UserChatCard"
+
 export default () => {
 
   const dispatch = useDispatch()
@@ -29,33 +31,22 @@ export default () => {
         fullWidth={true}
       >
         <DialogContent style={{ height: "650px" }} dividers={true}>
-          <DialogContentText
-            id="scroll-dialog-description"
-          >
-            {[...new Array(50)]
-              .map(
-                () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-              )
-              .join('\n')}
-          </DialogContentText>
+          <UserChatCard data="A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side"/>
         </DialogContent>
         {/* <Box mx={3}><TextField id="outlined-basic" mx={3} fullWidth variant="outlined" size="small" /></Box> */}
         <Box px={3} py={2}>
-        <Grid container direction="row" alignItems="center">
-          <Grid item xs>
-            <Box mr={1}><TextField autoFocus id="outlined-basic" fullWidth variant="outlined" size="small" /></Box>
+          <Grid container direction="row" alignItems="center">
+            <Grid item xs>
+              <Box mr={1}><TextField autoFocus id="outlined-basic" fullWidth variant="outlined" size="small" /></Box>
+            </Grid>
+            <Grid item>
+              <Button variant="contained" color="primary" disableElevation>
+                <Box fontWeight="fontWeightBold" textAlign="left">
+                  <FontAwesomeIcon icon={faPaperPlane} size="lg" />
+                </Box>
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item>
-            <Button variant="contained" color="primary" disableElevation>
-              <Box fontWeight="fontWeightBold" textAlign="left">
-                <FontAwesomeIcon icon={faPaperPlane} size="lg"/>
-            </Box>
-            </Button>
-          </Grid>
-        </Grid>
         </Box>
       </Dialog>
     </div>
