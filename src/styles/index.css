@@ -1,3 +1,7 @@
 * {
   font-family: 'Quicksand', sans-serif;
 }
+
+html, body {
+  margin: 0;
+}
