@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 
 import { openChatAction, detectIntent, addQueryAction } from "../redux/actions";
@@ -16,9 +16,16 @@ export default () => {
   const dispatch = useDispatch()
 
   const openChat = useSelector(state => state.openChat.open)
-  const query = useSelector((state) => state.query)
+  const query = useSelector((state) => state.query.text)
   const chats = useSelector(state => state.chats)
   const loading = useSelector(state => state.loading.show)
+
+  useEffect(() => {
+    let chatDialog = document.getElementById("chatDialog")
+    if(chatDialog) {
+      chatDialog.scrollTop = chatDialog.scrollHeight
+    }
+  })
 
   const handleCloseChat = (e) => {
     dispatch(openChatAction(false))
@@ -32,16 +39,11 @@ export default () => {
     dispatch(detectIntent())
   }
 
-  const jama = () => {
-    document.getElementById("chatDialog").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
-  }
-
   return (
     <div>
       <Dialog
         onClose={handleCloseChat}
         open={openChat}
-        onClick={jama}
         scroll="paper"
         maxWidth="sm"
         fullWidth={true}
@@ -55,12 +57,12 @@ export default () => {
               return (<UserChatCard key={i} data={x} />)
             })
           }
-          {loading ? (<Loading/>) : null}
+          {loading ? (<Loading />) : null}
         </DialogContent>
         <Box px={3} py={2}>
           <Grid container direction="row" alignItems="center">
             <Grid item xs>
-              <Box mr={1}><TextField onChange={ (e) => handleAddQuery(e.target.value) } value={query.text} autoFocus id="outlined-basic" fullWidth variant="outlined" size="small" /></Box>
+              <Box mr={1}><TextField onChange={(e) => handleAddQuery(e.target.value)} value={query} autoFocus id="outlined-basic" fullWidth variant="outlined" size="small" /></Box>
             </Grid>
             <Grid item>
               <Button onClick={handleDetectIntent} style={{ borderRadius: "10px" }} variant="contained" color="primary" disableElevation>

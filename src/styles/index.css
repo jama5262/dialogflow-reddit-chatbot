@@ -20,7 +20,3 @@ html, body {
   height: 5px;
   width: 5px;
 }
-
-.scrollable-content {
-  scroll-behavior:smooth;
-}
