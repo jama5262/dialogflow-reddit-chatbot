@@ -6,7 +6,26 @@ import { faRobot } from '@fortawesome/free-solid-svg-icons'
 
 import RedditPostCard from "./RedditPostCard"
 
-const list = [1, 2, 3]
+const redditPosts = (redditPosts) => {
+  if (redditPosts && redditPosts.length) {
+    return (
+      <Grid spacing={2} container direction="row" style={{ flexWrap: "nowrap" }}>
+        <Grid item> <FontAwesomeIcon icon={faRobot} size="2x" color="#FFF" /></Grid>
+        <Grid container direction="column" style={{ maxWidth: "72.5%" }}>
+          {
+            redditPosts.map((x, i) => {
+              return (
+                <Grid key={i} item style={{ width: "100%" }}>
+                  <RedditPostCard />
+                </Grid>
+              );
+            })
+          }
+        </Grid>
+      </Grid>
+    )
+  }
+}
 
 export default (props) => {
   return (
@@ -16,25 +35,12 @@ export default (props) => {
         <Grid item style={{ maxWidth: "75%" }}>
           <Card variant="outlined" style={{ border: "2px solid #FF4500", background: "#FF4500", borderRadius: "15px" }}>
             <CardContent style={{ padding: "0" }}>
-              <Box p={1} fontWeight="fontWeightBold" style={{ color: "white" }}>{props.data}</Box>
+              <Box p={1} fontWeight="fontWeightBold" style={{ color: "white" }}>{props.data.fullfilment}</Box>
             </CardContent>
           </Card>
         </Grid>
       </Grid>
-      <Grid spacing={2} container direction="row" style={{ flexWrap: "nowrap" }}>
-        <Grid item> <FontAwesomeIcon icon={faRobot} size="2x" color="#FFF" /></Grid>
-        <Grid container direction="column" style={{ maxWidth: "72.5%" }}>
-          {
-            list.map((x, i) => {
-              return (
-                <Grid item style={{ width: "100%" }}>
-                  <RedditPostCard />
-                </Grid>
-              );
-            })
-          }
-        </Grid>
-      </Grid>
+      {redditPosts(props.data.redditPosts)}
     </Box>
   )
 }

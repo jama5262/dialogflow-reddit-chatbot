@@ -9,7 +9,7 @@ export default (props) => {
         <Grid item style={{maxWidth: "75%"}}>
           <Card variant="outlined" style={{ border: "2px solid #FF4500", borderRadius: "15px" }}>
             <CardContent style={{ padding: "0" }}>
-              <Box p={1} fontWeight="fontWeightBold">{props.data}</Box>
+              <Box p={1} fontWeight="fontWeightBold">{props.data.fullfilment}</Box>
             </CardContent>
           </Card>
         </Grid>

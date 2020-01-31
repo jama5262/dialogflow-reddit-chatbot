@@ -16,6 +16,7 @@ export default () => {
   const dispatch = useDispatch()
 
   const openChat = useSelector(state => state.openChat.open)
+  const chats = useSelector(state => state.chats)
 
   const handleCloseChat = () => {
     dispatch(openChatAction(false))
@@ -32,10 +33,14 @@ export default () => {
       >
         <DialogContent style={{ height: "650px" }} dividers={true}>
           <Loading/>
-          <UserChatCard data="Hi"/>
-          <BotChatCard data="Hello, how can I help you"/>
-          <UserChatCard data="I would like 10 post from r/subreddit please"/>
-          <BotChatCard data="A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side"/>
+          {
+            chats.map((x, i) => {
+              if(x.bot) {
+                return (<BotChatCard key={i} data={x}/>)
+              }
+              return (<UserChatCard key={i} data={x}/>)
+            })
+          }
         </DialogContent>
         <Box px={3} py={2}>
           <Grid container direction="row" alignItems="center">

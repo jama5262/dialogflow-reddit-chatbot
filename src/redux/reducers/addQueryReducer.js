@@ -1,13 +1,13 @@
 import * as types from "../../utils/constants/actionConstants"
 
 const initialState = {
-  open: true
+  text: ""
 }
 
-export const openChat = (state = initialState, action) => {
+export const addQuery = (state = initialState, action) => {
   switch (action.type) {
-    case types.OPEN_CHAT:
-      state = { ...state, open: action.open }
+    case types.ADD_QUERY:
+      state = { ...state, text: action.shtextow }
       break;
     default:
       break;

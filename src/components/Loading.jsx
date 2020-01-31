@@ -15,6 +15,9 @@ export default () => {
       delay: function(el, i, l) {
         return i * 100;
       },
+      endDelay: function(el, i, l) {
+        return (l - i) * 100;
+      }
     });
   }, [])
 
