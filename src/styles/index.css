@@ -13,3 +13,10 @@ html, body {
 .gridFlex {
   flex-wrap: nowrap;
 }
+
+.loadingElement {
+  border-radius: 100%;
+  background-color: white;
+  height: 5px;
+  width: 5px;
+}

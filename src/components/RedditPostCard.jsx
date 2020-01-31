@@ -7,7 +7,7 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 export default () => {
   return (
     <Box mt={1}>
-      <Card variant="outlined" style={{ border: "2px solid #FF4500", borderRadius: "10px" }}>
+      <Card variant="outlined" style={{ border: "2px solid #FF4500", borderRadius: "15px" }}>
         <CardContent style={{padding: "6px 10px"}}>
           <Grid container direction="column">
             <Grid item sm>

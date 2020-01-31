@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { openChatAction } from "../redux/actions";
 
-import { Grid, Dialog, DialogActions, DialogContent, DialogContentText, Button, TextField, Box } from '@material-ui/core';
+import { Grid, Dialog, DialogContent, Button, TextField, Box } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 import UserChatCard from "./UserChatCard"
 import BotChatCard from "./BotChatCard"
+import Loading from "./Loading"
 
 export default () => {
 
@@ -30,6 +31,7 @@ export default () => {
         fullWidth={true}
       >
         <DialogContent style={{ height: "650px" }} dividers={true}>
+          <Loading/>
           <UserChatCard data="Hi"/>
           <BotChatCard data="Hello, how can I help you"/>
           <UserChatCard data="I would like 10 post from r/subreddit please"/>
