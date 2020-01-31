@@ -16,8 +16,6 @@ export default () => {
 
   const openChat = useSelector(state => state.openChat.open)
 
-  console.log(openChat);
-
   const handleCloseChat = () => {
     dispatch(openChatAction(false))
   }
@@ -34,18 +32,16 @@ export default () => {
         <DialogContent style={{ height: "650px" }} dividers={true}>
           <UserChatCard data="Hi"/>
           <BotChatCard data="Hello, how can I help you"/>
-          <UserChatCard data="A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side"/>
-          <BotChatCard data="Sure, what else? 😂"/>
+          <UserChatCard data="I would like 10 post from r/subreddit please"/>
           <BotChatCard data="A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side"/>
         </DialogContent>
-        {/* <Box mx={3}><TextField id="outlined-basic" mx={3} fullWidth variant="outlined" size="small" /></Box> */}
         <Box px={3} py={2}>
           <Grid container direction="row" alignItems="center">
             <Grid item xs>
               <Box mr={1}><TextField autoFocus id="outlined-basic" fullWidth variant="outlined" size="small" /></Box>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary" disableElevation>
+              <Button style={{borderRadius: "10px"}} variant="contained" color="primary" disableElevation>
                 <Box fontWeight="fontWeightBold" textAlign="left">
                   <FontAwesomeIcon icon={faPaperPlane} size="lg" />
                 </Box>
