@@ -4,7 +4,7 @@ const initialState = [
   {
     "id": 1,
     "bot": true,
-    "fullfilment": "Hi, I am a reddit chatbot. Below are examples of what you can ask me \n Get me top/new/hot posts"
+    "fullfilment": "Greetings 😀, reddit chatbot here 👋. You can ask me about top/hot or new post from different subreddits. Like 'show me top 5 funny posts' or 'I would new posts from r/ask subreddit, please'. Try it out now 👇"
   }
 ]
 

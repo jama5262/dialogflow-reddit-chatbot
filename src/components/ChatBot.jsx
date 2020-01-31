@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 
 import { openChatAction, detectIntent, addQueryAction } from "../redux/actions";
@@ -12,11 +12,6 @@ import BotChatCard from "./BotChatCard"
 import Loading from "./Loading"
 
 export default () => {
-
-  useEffect(() => {
-    
-  })
-
 
   const dispatch = useDispatch()
 

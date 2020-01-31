@@ -7,7 +7,7 @@ import { faRedditAlien } from '@fortawesome/free-brands-svg-icons'
 export default (props) => {
   return (
     <Box mt={1}>
-      <a target="_blank" rel="noopener noreferrer" href={`https://www.reddit.com${props.data.url}`}>
+      <a style={{textDecoration: "none"}} target="_blank" rel="noopener noreferrer" href={`https://www.reddit.com${props.data.url}`}>
         <Card variant="outlined" style={{ border: "2px solid #FF4500", borderRadius: "15px" }}>
           <CardContent style={{ padding: "6px 10px" }}>
             <Grid container direction="column">
