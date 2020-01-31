@@ -11,5 +11,46 @@ export const detectIntent = () => {
   return (dispatch, getState) => {
     const { query } = getState()
 
+    if (!query.text.length) {
+      dispatch(chatAction({
+        "bot": true,
+        "fullfilment": "You didn't ask me anything 😐"
+      }))
+      return
+    }
+
+    dispatch(chatAction({
+      "bot": false,
+      "fullfilment": query.text
+    }))
+    dispatch(loadingAction(true))
+    dispatch(addQueryAction(""))
+
+    axios({
+      baseURL: BASE_URL,
+      url: '/chatbot',
+      params: {
+        query: query.text
+      }
+    })
+      .then((response) => {
+        dispatch(chatAction(response.data.data))
+      })
+      .catch((error) => {
+        if (error.response) {
+          dispatch(chatAction({
+            "bot": true,
+            "fullfilment": error.response.data.error.fullfilment
+          }))
+        } else {
+          dispatch(chatAction({
+            "bot": true,
+            "fullfilment": error.message + " 💀"
+          }))
+        }
+      })
+      .then(() => {
+        dispatch(loadingAction(false))
+      })
   }
 }

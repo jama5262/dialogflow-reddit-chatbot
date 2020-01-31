@@ -1,8 +1,10 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 
 import anime from 'animejs/lib/anime.es.js';
 
-import { Grid, Chip } from '@material-ui/core';
+import { Box, Grid, Chip } from '@material-ui/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRobot } from '@fortawesome/free-solid-svg-icons'
 
 export default () => {
 
@@ -12,10 +14,10 @@ export default () => {
       translateY: [-3, 3, 0],
       direction: 'alternate',
       loop: true,
-      delay: function(el, i, l) {
+      delay: function (el, i, l) {
         return i * 100;
       },
-      endDelay: function(el, i, l) {
+      endDelay: function (el, i, l) {
         return (l - i) * 100;
       }
     });
@@ -30,8 +32,13 @@ export default () => {
   )
 
   return (
-    <div>
-      <Chip label={j} color="primary"/>
-    </div>
+    <Box my={2}>
+      <Grid direction="row" spacing={1} container justify="flex-start" style={{ flexWrap: "nowrap" }}>
+        <Grid item> <FontAwesomeIcon icon={faRobot} size="2x" color="#FF4500" /></Grid>
+        <Grid item>
+          <Chip label={j} color="primary" />
+        </Grid>
+      </Grid>
+    </Box>
   )
 }

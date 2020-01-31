@@ -16,7 +16,7 @@ const redditPosts = (redditPosts) => {
             redditPosts.map((x, i) => {
               return (
                 <Grid key={i} item style={{ width: "100%" }}>
-                  <RedditPostCard />
+                  <RedditPostCard data={x}/>
                 </Grid>
               );
             })

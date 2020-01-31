@@ -1,1 +1,1 @@
-export const BASE_URL = "https://dialogflow-reddit-chatbot.herokuapp.com/"
+export const BASE_URL = "https://dialogflow-reddit-chatbot.herokuapp.com"

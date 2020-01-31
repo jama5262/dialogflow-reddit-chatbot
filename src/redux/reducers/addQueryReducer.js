@@ -7,7 +7,7 @@ const initialState = {
 export const addQuery = (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_QUERY:
-      state = { ...state, text: action.shtextow }
+      state = { ...state, text: action.text }
       break;
     default:
       break;
