@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 import UserChatCard from "./UserChatCard"
+import BotChatCard from "./BotChatCard"
 
 export default () => {
 
@@ -31,7 +32,11 @@ export default () => {
         fullWidth={true}
       >
         <DialogContent style={{ height: "650px" }} dividers={true}>
+          <UserChatCard data="Hi"/>
+          <BotChatCard data="Hello, how can I help you"/>
           <UserChatCard data="A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side"/>
+          <BotChatCard data="Sure, what else? 😂"/>
+          <BotChatCard data="A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side"/>
         </DialogContent>
         {/* <Box mx={3}><TextField id="outlined-basic" mx={3} fullWidth variant="outlined" size="small" /></Box> */}
         <Box px={3} py={2}>
