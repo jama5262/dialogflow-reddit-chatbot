@@ -1,13 +1,13 @@
 import * as types from "../../utils/constants/actionConstants"
 
 const initialState = {
-  show: false
+  open: false
 }
 
-export const loading = (state = initialState, action) => {
+export const openChat = (state = initialState, action) => {
   switch (action.type) {
-    case types.LOADING:
-      state = { ...state, show: action.show }
+    case types.OPEN_CHAT:
+      state = { ...state, open: action.open }
       break;
     default:
       break;

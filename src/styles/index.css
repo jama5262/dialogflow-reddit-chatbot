@@ -5,3 +5,18 @@
 html, body {
   margin: 0;
 }
+
+.elementColor {
+  color: #FF4500;
+}
+
+.gridFlex {
+  flex-wrap: nowrap;
+}
+
+.loadingElement {
+  border-radius: 100%;
+  background-color: white;
+  height: 5px;
+  width: 5px;
+}

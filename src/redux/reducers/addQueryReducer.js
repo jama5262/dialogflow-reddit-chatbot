@@ -1,13 +1,13 @@
 import * as types from "../../utils/constants/actionConstants"
 
 const initialState = {
-  show: false
+  text: ""
 }
 
-export const loading = (state = initialState, action) => {
+export const addQuery = (state = initialState, action) => {
   switch (action.type) {
-    case types.LOADING:
-      state = { ...state, show: action.show }
+    case types.ADD_QUERY:
+      state = { ...state, text: action.text }
       break;
     default:
       break;
