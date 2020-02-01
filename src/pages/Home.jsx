@@ -20,7 +20,7 @@ export default () => {
   return (
     <div>
       <Grid container direction="column" justify="center" alignItems="center" style={{ minHeight: '100vh' }}>
-        <Grid xs={5} item><Box className="elementColor" mb={8} fontSize="h1.fontSize" textAlign="center" fontWeight="fontWeightBold">Dialogflow Reddit Chatbot</Box></Grid>
+        <Grid xs={6} item><Box className="elementColor" mb={8} fontSize="h1.fontSize" textAlign="center" fontWeight="fontWeightBold">Dialogflow Reddit Chatbot</Box></Grid>
         <Grid xs={4} item><Box mb={8} fontSize="h5.fontSize" textAlign="center" fontWeight="fontWeightBold">A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side</Box></Grid>
         <Grid xs={8} item>
           <Button style={{borderRadius: "10px"}} onClick={handleOpenChat} variant="contained" color="primary" disableElevation>

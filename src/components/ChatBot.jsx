@@ -27,7 +27,7 @@ export default () => {
     }
   })
 
-  const handleCloseChat = (e) => {
+  const handleCloseChat = () => {
     dispatch(openChatAction(false))
   }
 
@@ -37,6 +37,12 @@ export default () => {
 
   const handleDetectIntent = () => {
     dispatch(detectIntent())
+  }
+
+  const handleOnEnterPressed = (event) => {
+    if (event && event.key === "Enter") {
+      handleDetectIntent()
+    }
   }
 
   return (
@@ -62,7 +68,7 @@ export default () => {
         <Box px={3} py={2}>
           <Grid container direction="row" alignItems="center">
             <Grid item xs>
-              <Box mr={1}><TextField onChange={(e) => handleAddQuery(e.target.value)} value={query} autoFocus id="outlined-basic" fullWidth variant="outlined" size="small" /></Box>
+              <Box mr={1}><TextField onKeyDown={(e) => handleOnEnterPressed(e)} onChange={(e) => handleAddQuery(e.target.value)} value={query} autoFocus id="outlined-basic" fullWidth variant="outlined" size="small" /></Box>
             </Grid>
             <Grid item>
               <Button onClick={handleDetectIntent} style={{ borderRadius: "10px" }} variant="contained" color="primary" disableElevation>
