@@ -7,7 +7,7 @@ views = Blueprint("views", __name__)
 
 @views.route("")
 def renderReactPage():
-    return "React Page Here", 200
+    return render_template('index.html'), 200
 
 
 @views.route("chatbot")
