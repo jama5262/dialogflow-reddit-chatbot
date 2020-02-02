@@ -1,7 +1,7 @@
 import * as types from "../../utils/constants/actionConstants"
 
 const initialState = {
-  open: false
+  open: true
 }
 
 export const openChat = (state = initialState, action) => {
