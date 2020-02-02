@@ -54,13 +54,13 @@ export default () => {
         maxWidth="sm"
         fullWidth={true}
       >
-        <DialogContent id="chatDialog" style={{ height: "650px" }} dividers={true}>
+        <DialogContent id="chatDialog" style={{ height: "650px", overflowX: "hidden" }} dividers={true}>
           {
             chats.map((x, i) => {
               if (x.bot) {
-                return (<BotChatCard key={i} data={x} />)
+                return (<BotChatCard className="chat" key={i} data={x} />)
               }
-              return (<UserChatCard key={i} data={x} />)
+              return (<UserChatCard className="chat" key={i} data={x} />)
             })
           }
           {loading ? (<Loading />) : null}

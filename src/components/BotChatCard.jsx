@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import anime from 'animejs/lib/anime.es.js';
 
 import { Grid, Card, Box, CardContent } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,7 +17,7 @@ const redditPosts = (redditPosts) => {
             redditPosts.map((x, i) => {
               return (
                 <Grid key={i} item style={{ width: "100%" }}>
-                  <RedditPostCard data={x}/>
+                  <RedditPostCard data={x} />
                 </Grid>
               );
             })
@@ -28,8 +29,18 @@ const redditPosts = (redditPosts) => {
 }
 
 export default (props) => {
+
+  let animejsClass = `bot${props.data.id}`
+
+  useEffect(() => {
+    anime({
+      targets: `.${animejsClass}`,
+      translateY: [30, 0],
+    });
+  }, [animejsClass])
+
   return (
-    <Box my={2}>
+    <Box className={animejsClass} my={2}>
       <Grid direction="row" spacing={1} container justify="flex-start" style={{ flexWrap: "nowrap" }}>
         <Grid item> <FontAwesomeIcon icon={faRobot} size="2x" color="#FF4500" /></Grid>
         <Grid item style={{ maxWidth: "75%" }}>
