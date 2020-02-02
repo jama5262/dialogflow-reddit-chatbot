@@ -4,7 +4,7 @@ const initialState = [
   {
     "id": 1,
     "bot": true,
-    "fullfilment": "Greetings 😀, reddit chatbot here 👋. You can ask me about top/hot or new post from different subreddits. Like 'show me top 5 funny posts' or 'I would new posts from r/ask subreddit, please'. Try it out now 👇"
+    "fullfilment": "Greetings 😀, reddit chatbot here 👋. You can ask me about top/hot or new post from different subreddits. Like 'show me top 5 funny posts' or 'I would like new posts from r/ask subreddit, please'. Try it out now 👇"
   }
 ]
 
