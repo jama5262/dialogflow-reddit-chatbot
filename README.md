@@ -1,4 +1,4 @@
-# dialogflow-reddit-chatbot
+# dialogflow-reddit-chatbot (Server Side)
 A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side
 
 ## Endpoints
