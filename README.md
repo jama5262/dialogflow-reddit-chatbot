@@ -4,7 +4,7 @@ A dailogflow chatbot that consumes the reddit api using a flask server-side and 
 ## Endpoints
 | Title | Endpoint | Method | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| Render React UI  | /  | GET  | Render the react link previewer UI  |
+| Render React UI  | /  | GET  | Render the react reddit chatbot UI  |
 | Chatbot  | /predict?query=`show me top 5 funny posts`  | GET  | Returns a fullfilment message and matched reddit posts  |
 
 # Table of Contents
