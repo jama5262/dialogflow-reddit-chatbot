@@ -10,7 +10,7 @@ export default (props) => {
   useEffect(() => {
     anime({
       targets: `.${animejsClass}`,
-      translateY: [30, 0]
+      translateY: [30, 0],
     });
   }, [animejsClass])
 

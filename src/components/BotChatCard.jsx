@@ -36,8 +36,6 @@ export default (props) => {
     anime({
       targets: `.${animejsClass}`,
       translateY: [30, 0],
-      // scale: [1.5, 1],
-      // duration: 500
     });
   }, [animejsClass])
 
