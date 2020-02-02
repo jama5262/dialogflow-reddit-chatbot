@@ -4,4 +4,3 @@ __pycache__/
 .pytest_cache
 .coverage
 .vscode
-service-account.json
