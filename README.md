@@ -1,6 +1,14 @@
 # dialogflow-reddit-chatbot (Server Side)
 A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side
 
+You can interact with the app here -> https://dialogflow-reddit-chatbot.herokuapp.com/
+
+You can visit the `react-client` branch to checkout the react app [here](https://github.com/jama5262/dialogflow-reddit-chatbot/tree/react-client)
+
+Demo 1 | Demo 2
+------------ | ------------- 
+<img src="https://github.com/jama5262/dialogflow-reddit-chatbot/blob/flask-server/demos/image1.gif" alt="alt text" height="500px"> | <img src="https://github.com/jama5262/dialogflow-reddit-chatbot/blob/flask-server/demos/image3.gif" height="500px">
+
 ## Endpoints
 | Title | Endpoint | Method | Description |
 | ------------- | ------------- | ------------- | ------------- |
