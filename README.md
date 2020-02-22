@@ -12,7 +12,6 @@ Demo 1 | Demo 2
 
 # Table of Contents
 - [Built With](#built-with)
-- [Demos](#demos)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Support](#support)
@@ -26,9 +25,6 @@ Demo 1 | Demo 2
 - [Axios](https://github.com/axios/axios)
 - [React Materail UI](https://material-ui.com/)
 - [AnimeJS](https://animejs.com/)
-
-## Demos
-
 
 ## Installation
 
