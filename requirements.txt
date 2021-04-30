@@ -26,7 +26,7 @@ pyflakes==2.1.1
 python-dotenv==0.10.5
 pytz==2019.3
 requests==2.22.0
-rsa==4.0
+rsa==4.7
 six==1.14.0
 urllib3==1.25.8
 Werkzeug==0.16.0
