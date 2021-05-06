@@ -7,7 +7,7 @@ dialogflow==0.7.2
 entrypoints==0.3
 flake8==3.7.9
 Flask==1.1.1
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 google-api-core==1.16.0
 google-auth==1.11.0
 googleapis-common-protos==1.51.0
