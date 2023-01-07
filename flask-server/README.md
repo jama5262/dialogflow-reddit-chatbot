@@ -1,25 +1,23 @@
 # dialogflow-reddit-chatbot (Server Side)
-A dailogflow chatbot that consumes the reddit api using a flask server-side and react client-side
-
-You can interact with the app here -> https://dialogflow-reddit-chatbot.herokuapp.com/
-
-You can visit the `react-client` branch to checkout the react app [here](https://github.com/jama5262/dialogflow-reddit-chatbot/tree/react-client)
+A dailogflow chatbot that consumes the reddit api using a flask server and a react js client
 
 Demo 1 | Demo 2
 ------------ | ------------- 
-<img src="https://github.com/jama5262/dialogflow-reddit-chatbot/blob/flask-server/demos/image1.gif" alt="alt text" height="500px"> | <img src="https://github.com/jama5262/dialogflow-reddit-chatbot/blob/flask-server/demos/image3.gif" height="500px">
+<img src="../demos/image1.gif" alt="alt text" height="500px"> | <img src="../demos/image3.gif" height="500px">
 
 ## Endpoints
-| Title | Endpoint | Method | Description |
-| ------------- | ------------- | ------------- | ------------- |
-| Render React UI  | /  | GET  | Render the react reddit chatbot UI  |
-| Chatbot  | /predict?query=`show me top 5 funny posts`  | GET  | Returns a fullfilment message and matched reddit posts  |
+| Title | Endpoint                                   | Method | Description |
+| ------------- |--------------------------------------------| ------------- | ------------- |
+| Chatbot  | /chatbot?query=`show me top 5 funny posts` | GET  | Returns a fullfilment message and matched reddit posts  |
 
 # Table of Contents
+- [Built With](#built-with)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Support](#support)
-- [License](#license)
+- 
+## Built-With
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+- [Dialogflow](https://cloud.google.com/dialogflow/?utm_source=google&utm_medium=cpc&utm_campaign=emea-emea-all-en-dr-skws-all-all-trial-p-gcp-1011340&utm_content=text-ad-none-any-DEV_c-CRE_550162822986-ADGP_Hybrid%20%7C%20SKWS%20-%20PHR%20%7C%20Txt%20~%20AI%20%26%20ML%20~%20Dialogflow%23v3-KWID_43700066772651217-aud-488003287395%3Akwd-389521182622-userloc_9076828&utm_term=KW_dialogflow-NET_g-PLAC_&gclid=Cj0KCQiAzeSdBhC4ARIsACj36uF6zxdWzxvsFPqTKmusbtAQFAR2C4m4aWQ_IUrjwzPAohr-dFFaWaUaApLnEALw_wcB&gclsrc=aw.ds)
 
 ## Installation
 
@@ -28,25 +26,31 @@ Clone this repo to your local machine using `https://github.com/jama5262/dialogf
 
 ### Setup
 To get started, cd into the project and follow the following steps
-1. #### Switch to `flask-server` branch
+1. #### Change direcory to the `flask-server` folder
 ```
-git checkout flask-server
+cd  flask-server
 ```
 
 2. #### Create a virtual environment
 
 ```
-virtualenv venv
+python -m venv venv
 ```
 
 And activate (For Windows)
 
 ```
-venv\Script\activate
+.\venv\bin\activate
 ```
 
 3. #### Create a `.env` file
-Create a `.env` file and add the following
+Create a `.env` file 
+
+```
+touch .env
+```
+
+And add the following
 ```
 FLASK_APP=run.py
 FLASK_ENV=development
@@ -72,6 +76,13 @@ You can find the app here http://localhost:5000
 
 ### Sample success and error responses
 #### Success
+
+##### Request
+```
+http://localhost:5000/request?query=show me top 5 funny posts
+```
+
+##### Response
 ```
 {
   "data": {
@@ -100,6 +111,15 @@ You can find the app here http://localhost:5000
 }
 ```
 #### Error
+
+##### Request
+
+```
+http://localhost:5000/request
+```
+
+##### Response
+
 ```
 {
   "error": "Looks like you didn't pass anything",
@@ -107,35 +127,3 @@ You can find the app here http://localhost:5000
 }
 ```
 
-## Support
-
-Reach out to me at one of the following medias!
-
-- Email at jama3137@gmail.com
-- Twitter [timedjama5262](https://twitter.com/timedjama5262)
-
-## License
-
-```
-MIT License
-
-Copyright (c) 2020 Jama Mohamed
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
