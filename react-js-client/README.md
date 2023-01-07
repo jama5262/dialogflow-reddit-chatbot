@@ -40,7 +40,24 @@ npm install
 Great the project has been setup 👍
 
 ## Usage
+
+The client-side will need the flask server-side's url that should be running. Create a`.env` file with the following content
+
+```
+REACT_APP_FLASK_SERVER_BASE_URL=http://localhost:5000
+```
+
 To start using it locally, run the following
 ```
 npm start
+```
+
+You can find the app here http://localhost:3000
+
+### Build the react client side
+
+You can also build the static file with the following command for the react client app. Once built, move these files to `flask-server/app/templates` and you can now load them from the `flask server`
+
+```
+npm run build
 ```

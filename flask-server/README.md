@@ -79,7 +79,7 @@ You can find the app here http://localhost:5000
 
 ##### Request
 ```
-http://localhost:5000/request?query=show me top 5 funny posts
+http://localhost:5000/chatbot?query=show me top 5 funny posts
 ```
 
 ##### Response
@@ -108,22 +108,6 @@ http://localhost:5000/request?query=show me top 5 funny posts
     ]
   },
   "status": 200
-}
-```
-#### Error
-
-##### Request
-
-```
-http://localhost:5000/request
-```
-
-##### Response
-
-```
-{
-  "error": "Looks like you didn't pass anything",
-  "status": 422
 }
 ```
 
