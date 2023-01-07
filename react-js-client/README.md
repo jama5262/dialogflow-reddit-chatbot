@@ -54,7 +54,7 @@ npm start
 
 You can find the app here http://localhost:3000
 
-### Build the react client side
+### Build the react client side and host from the flask server
 
 You can also build the static file with the following command for the react client app. Once built, move these files to `flask-server/app/templates` and you can now load them from the `flask server`
 
